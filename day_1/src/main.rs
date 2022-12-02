@@ -5,8 +5,7 @@ use std::fs::read_to_string;
 #[derive(Parser)]
 #[command(version)]
 struct Cli {
-    input1: String,
-    input2: String,
+    input: String,
 }
 
 fn main() {
@@ -16,22 +15,22 @@ fn main() {
 
     let ask = rl.readline("run part 1? (y/n): ").unwrap();
 
+    let input = read_to_string(&args.input).unwrap();
+
     if ask == "y" {
-        let part_1 = part_1(&args.input1);
+        let part_1 = part_1(&input);
         println!("Part 1: {}", part_1);
     }
 
     let ask = rl.readline("run part 2? (y/n): ").unwrap();
 
     if ask == "y" {
-        let part_2 = part_2(&args.input2);
+        let part_2 = part_2(&input);
         println!("Part 2: {}", part_2);
     }
 }
 
-fn part_1(input_path: &str) -> String {
-    let input = read_to_string(input_path).unwrap();
-
+fn part_1(input: &str) -> String {
     let mut highest = 0;
     let mut current_elf = 0;
 
@@ -53,9 +52,7 @@ fn part_1(input_path: &str) -> String {
     highest.to_string()
 }
 
-fn part_2(input_path: &str) -> String {
-    let input = read_to_string(input_path).unwrap();
-
+fn part_2(input: &str) -> String {
     let mut elves = vec![];
 
     let mut current_elf = 0;
