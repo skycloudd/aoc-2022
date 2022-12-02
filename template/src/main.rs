@@ -29,14 +29,14 @@ fn main() {
     }
 }
 
-fn part_1(input_path: &str) -> i32 {
+fn part_1(input_path: &str) -> String {
     let _input = read_to_string(input_path).unwrap();
 
-    0
+    String::new()
 }
 
-fn part_2(input_path: &str) -> i32 {
+fn part_2(input_path: &str) -> String {
     let _input = read_to_string(input_path).unwrap();
 
-    0
+    String::new()
 }
