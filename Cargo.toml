@@ -2,4 +2,5 @@
 members = [
     "template",
     "day_1",
+    "day_2",
 ]

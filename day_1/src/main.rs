@@ -29,7 +29,7 @@ fn main() {
     }
 }
 
-fn part_1(input_path: &str) -> i32 {
+fn part_1(input_path: &str) -> String {
     let input = read_to_string(input_path).unwrap();
 
     let mut highest = 0;
@@ -50,10 +50,10 @@ fn part_1(input_path: &str) -> i32 {
         }
     }
 
-    highest
+    highest.to_string()
 }
 
-fn part_2(input_path: &str) -> i32 {
+fn part_2(input_path: &str) -> String {
     let input = read_to_string(input_path).unwrap();
 
     let mut elves = vec![];
@@ -76,5 +76,5 @@ fn part_2(input_path: &str) -> i32 {
 
     elves.sort_by(|a, b| b.cmp(a));
 
-    elves[0] + elves[1] + elves[2]
+    (elves[0] + elves[1] + elves[2]).to_string()
 }
