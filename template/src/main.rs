@@ -13,9 +13,9 @@ fn main() {
 
     let mut rl = Editor::<()>::new().unwrap();
 
-    let ask = rl.readline("run part 1? (y/n): ").unwrap();
-
     let input = read_to_string(&args.input).unwrap();
+
+    let ask = rl.readline("run part 1? (y/n): ").unwrap();
 
     if ask == "y" {
         let part_1 = part_1(&input);
